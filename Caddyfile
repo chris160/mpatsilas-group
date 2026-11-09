@@ -1,0 +1,4 @@
+mpatsilasgroup.com, www.mpatsilasgroup.com {
+	encode zstd gzip
+	reverse_proxy web:80
+}

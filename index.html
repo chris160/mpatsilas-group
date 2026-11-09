@@ -5,6 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mpatsilas Group · Αετιά Γρεβενών</title>
 <meta name="description" content="Mpatsilas Group, Αετιά Γρεβενών, από το 1936. Μαύρος χοίρος, παραδοσιακή ταβέρνα «Η Τσιουργιάκα» κοντά στη Βασιλίτσα, φάρμα, κρέας ωρίμανσης και ενοικιαζόμενα δωμάτια.">
+<meta name="theme-color" content="#0d0c0a">
+<link rel="canonical" href="https://mpatsilasgroup.com/">
+<link rel="alternate" hreflang="el" href="https://mpatsilasgroup.com/">
+<link rel="alternate" hreflang="en" href="https://mpatsilasgroup.com/en/">
+<link rel="icon" type="image/png" href="img/logo.png">
+<link rel="apple-touch-icon" href="img/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mpatsilas Group">
+<meta property="og:title" content="Mpatsilas Group · Αετιά Γρεβενών, από το 1936">
+<meta property="og:description" content="Φάρμα, μαύρος χοίρος, κρέας ωρίμανσης, ταβέρνα «Η Τσιουργιάκα» και δωμάτια δίπλα στη Βασιλίτσα.">
+<meta property="og:image" content="https://mpatsilasgroup.com/img/og.jpg">
+<meta property="og:url" content="https://mpatsilasgroup.com/">
+<meta property="og:locale" content="el_GR">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","@id":"https://mpatsilasgroup.com/#org","name":"Mpatsilas Group","url":"https://mpatsilasgroup.com/","logo":"https://mpatsilasgroup.com/img/logo.png","foundingDate":"1936","telephone":"+30 697 051 3616"},
+ {"@type":"Restaurant","name":"Η Τσιουργιάκα","alternateName":"Tsiourgiaka","parentOrganization":{"@id":"https://mpatsilasgroup.com/#org"},"servesCuisine":["Greek","Grill","Traditional"],"telephone":"+30 697 051 3616","image":"https://mpatsilasgroup.com/img/og.jpg","address":{"@type":"PostalAddress","addressLocality":"Αετιά","addressRegion":"Γρεβενά","addressCountry":"GR"},"url":"https://mpatsilasgroup.com/"},
+ {"@type":"LodgingBusiness","name":"Mpatsilas Group · Ενοικιαζόμενα δωμάτια","parentOrganization":{"@id":"https://mpatsilasgroup.com/#org"},"telephone":"+30 697 051 3616","address":{"@type":"PostalAddress","addressLocality":"Αετιά","addressRegion":"Γρεβενά","addressCountry":"GR"}},
+ {"@type":"ButcherShop","name":"Mpatsilas Group · Κρεοπωλείο","parentOrganization":{"@id":"https://mpatsilasgroup.com/#org"},"telephone":"+30 697 051 3616","address":{"@type":"PostalAddress","addressLocality":"Αετιά","addressRegion":"Γρεβενά","addressCountry":"GR"}}
+]}
+</script>
+<!-- Analytics: βάλτε εδώ το Google Analytics / Plausible snippet όταν έχετε λογαριασμό -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
@@ -258,15 +281,85 @@ section{padding:clamp(var(--s3),9vw,var(--s4)) 0}
   .reveal{transform:translateY(12px);transition:opacity .5s ease,transform .5s ease;transition-delay:0s!important}
   .in .inset{transition-delay:0s}
 }
+
+/* shop */
+.shop{margin-top:var(--s3);display:grid;grid-template-columns:repeat(2,1fr);gap:0 var(--s2)}
+.item{display:grid;grid-template-columns:1fr auto;gap:var(--s-2) var(--s1);align-items:baseline;padding:var(--s1) 0;border-bottom:1px solid var(--line)}
+.item h4{font-family:var(--serif);font-size:1.618rem;font-weight:600}
+.item .price{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+.item p{grid-column:1/-1;font-size:.95rem;color:var(--mute)}
+.item .ord{grid-column:1/-1;display:flex;gap:var(--s-1);flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:.4em;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:.6em 1em;border:1px solid var(--line);color:var(--paper);transition:border-color .2s,color .2s,transform .2s}
+.chip:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.shopnote{margin-top:var(--s1);font-size:.85rem;color:var(--mute)}
+/* timeline */
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s1);margin-top:var(--s2);position:relative}
+.timeline::before{content:"";position:absolute;left:0;right:0;top:9px;height:1px;background:linear-gradient(90deg,var(--gold),var(--line))}
+.step{position:relative;padding-top:var(--s2)}
+.step::before{content:"";position:absolute;top:4px;left:0;width:11px;height:11px;background:var(--ink);border:1px solid var(--gold);transform:rotate(45deg)}
+.step b{display:block;font-family:var(--serif);font-size:2.618rem;color:var(--gold);line-height:1;margin-bottom:var(--s-1)}
+.step h4{font-family:var(--serif);font-size:1.4rem;margin-bottom:var(--s-2)}
+.step p{font-size:.95rem}
+/* rooms */
+.rooms .feat{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s0);margin:var(--s1) 0 var(--s2)}
+.rooms .feat div{border:1px solid var(--line);padding:var(--s1) var(--s0)}
+.rooms .feat b{display:block;font-family:var(--serif);font-size:1.3rem;color:var(--gold);margin-bottom:.2em}
+.rooms .feat small{color:var(--mute);font-size:.85rem}
+/* reviews */
+.reviews{text-align:center}
+.reviews .stars{font-size:1.618rem;letter-spacing:.3em;color:var(--gold);margin-bottom:var(--s0)}
+.reviews h2{max-width:18ch;margin-left:auto;margin-right:auto}
+.reviews p{margin:0 auto var(--s2)}
+.reviews .row{display:flex;gap:var(--s-1);justify-content:center;flex-wrap:wrap}
+/* booking form */
+.book{border:1px solid var(--line);padding:clamp(var(--s1),4vw,var(--s2));background:var(--ink)}
+.book h3{margin-bottom:var(--s0)}
+.tabs{display:flex;gap:4px;margin-bottom:var(--s1);flex-wrap:wrap}
+.tabs label{flex:1;min-width:100px}
+.tabs label{position:relative}.tabs input{position:absolute;inset:0;opacity:0;width:100%;height:100%;margin:0;appearance:none;-webkit-appearance:none;pointer-events:none}
+[hidden]{display:none!important}
+.tabs span{display:block;text-align:center;padding:.8em .6em;border:1px solid var(--line);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.tabs input:checked+span{background:var(--gold);color:var(--ink);border-color:var(--gold);font-weight:700}
+.tabs input:focus-visible+span{outline:2px solid var(--gold2);outline-offset:2px}
+.fgrid{display:grid;grid-template-columns:1.618fr 1fr;gap:var(--s0)}
+.fgrid .full{grid-column:1/-1}
+.book label.f{display:block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.book input:not([type=radio]),.book textarea,.book select{display:block;width:100%;margin-top:.5em;background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--paper);font:inherit;font-size:1rem;padding:.6em 0;border-radius:0;transition:border-color .2s;color-scheme:dark}
+.book input:focus,.book textarea:focus{outline:0;border-color:var(--gold)}
+.book textarea{min-height:76px;resize:vertical}
+.sendrow{display:flex;gap:var(--s-1);flex-wrap:wrap;margin-top:var(--s1)}
+.sendrow .btn{flex:1;justify-content:center;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+.formnote{font-size:.8rem;color:var(--mute);margin-top:var(--s0)}
+/* static map */
+.mapcard{position:relative;display:block;aspect-ratio:1.618/1;overflow:hidden;border:1px solid var(--line);text-decoration:none;margin-top:var(--s2)}
+.mapcard img{filter:brightness(.45) saturate(.7);transition:transform 1.2s,filter .6s}
+.mapcard:hover img{transform:scale(1.04);filter:brightness(.6)}
+.mapcard .pin{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.mapcard .pin svg{width:42px;height:42px;margin:0 auto var(--s-1);filter:drop-shadow(0 6px 14px rgba(0,0,0,.6))}
+.mapcard .pin b{display:block;font-family:var(--serif);font-size:1.618rem}
+.mapcard .pin small{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+/* lang + social */
+.lang{font-size:.75rem!important;letter-spacing:.16em;border:1px solid var(--line);padding:.35em .7em}
+.social{display:flex;gap:var(--s0)}
+.social a{text-decoration:none}.social a:hover{color:var(--gold)}
+@media (max-width:900px){
+  .shop{grid-template-columns:1fr}
+  .timeline{grid-template-columns:1fr 1fr;row-gap:var(--s2)}
+  .timeline::before{display:none}
+  .rooms .feat{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr}
+  .mlang{position:absolute;top:22px;left:var(--gut);font-family:var(--sans)!important;font-size:.8rem!important;letter-spacing:.2em}
+}
 </style>
 </head>
 <body>
 
 <nav id="nav">
   <div class="wrap">
-    <a class="brand" href="#top"><img decoding="async" src="img/logo.png" alt="Λογότυπο Mpatsilas Group"><span>MPATSILAS GROUP</span></a>
+    <a class="brand" href="#top"><img src="img/logo.png" alt="Λογότυπο Mpatsilas Group"><span>MPATSILAS GROUP</span></a>
     <div class="links">
-      <a href="#farm">Φάρμα</a><a href="#meat">Κρέατα</a><a href="#pig">Μαύρος χοίρος</a><a href="#tavern">Ταβέρνα</a><a href="#vasilitsa">Βασιλίτσα</a><a href="#aetia">Αετιά</a>
+      <a href="#farm">Φάρμα</a><a href="#meat">Κρέατα</a><a href="#pig">Μαύρος χοίρος</a><a href="#tavern">Ταβέρνα</a><a href="#vasilitsa">Βασιλίτσα</a><a href="#rooms">Δωμάτια</a><a href="#contact">Κράτηση</a>
+      <a class="lang" href="en/" hreflang="en" lang="en">EN</a>
       <a class="call" href="tel:+306970513616">697 051 3616</a>
     </div>
     <button class="burger" id="burger" aria-label="Μενού" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -274,13 +367,14 @@ section{padding:clamp(var(--s3),9vw,var(--s4)) 0}
 </nav>
 
 <div class="mmenu" id="mmenu" aria-hidden="true">
-  <a href="#farm">Φάρμα</a><a href="#meat">Κρέατα</a><a href="#pig">Μαύρος χοίρος</a><a href="#tavern">Ταβέρνα</a><a href="#vasilitsa">Βασιλίτσα</a><a href="#aetia">Αετιά</a><a href="#contact">Επικοινωνία</a>
+  <a href="#farm">Φάρμα</a><a href="#meat">Κρέατα</a><a href="#pig">Μαύρος χοίρος</a><a href="#tavern">Ταβέρνα</a><a href="#vasilitsa">Βασιλίτσα</a><a href="#rooms">Δωμάτια</a><a href="#contact">Κράτηση</a>
   <a class="btn" href="tel:+306970513616">Κλήση · 697 051 3616</a>
+  <a class="mlang" href="en/" hreflang="en" lang="en">EN</a>
 </div>
-<div class="callbar" id="callbar"><a class="btn" href="tel:+306970513616">Κράτηση</a><a class="btn ghost" href="#contact">Χάρτης</a></div>
+<div class="callbar" id="callbar"><a class="btn" href="tel:+306970513616">Κλήση</a><a class="btn ghost" href="#contact">Κράτηση</a></div>
 
 <header class="hero" id="top">
-  <img fetchpriority="high" src="img/fireplace.jpg" alt="Το τζάκι της ταβέρνας Η Τσιουργιάκα">
+  <img fetchpriority="high" src="img/fireplace.webp" srcset="img/fireplace-800.webp 800w, img/fireplace.webp 1050w" sizes="(max-width:900px) 100vw, 60vw" alt="Το τζάκι της ταβέρνας Η Τσιουργιάκα">
   <span class="side l">Αετιά · Γρεβενά</span>
   <span class="side r">Βασιλίτσα · Πίνδος</span>
   <div class="inner">
@@ -290,8 +384,8 @@ section{padding:clamp(var(--s3),9vw,var(--s4)) 0}
     <svg class="orn" viewBox="0 0 120 14" fill="none" stroke="#d4a24c" stroke-width="1"><path d="M0 7h48M72 7h48"/><path d="M60 1l6 6-6 6-6-6z"/><circle cx="60" cy="7" r="1.5" fill="#d4a24c"/></svg>
     <p>Μαύρος χοίρος και μοσχάρια από τη φάρμα μας, κρέας ωρίμανσης, η παραδοσιακή ταβέρνα «Η Τσιουργιάκα» και δωμάτια δίπλα στη Βασιλίτσα.</p>
     <div class="row">
-      <a class="btn" href="tel:+306970513616">Κράτηση τραπεζιού</a>
-      <a class="btn ghost" href="#farm">Η ιστορία μας</a>
+      <a class="btn" href="#contact">Κράτηση</a>
+      <a class="btn ghost" href="#story">Η ιστορία μας</a>
     </div>
   </div>
   <div class="cue" aria-hidden="true"></div>
@@ -309,8 +403,8 @@ section{padding:clamp(var(--s3),9vw,var(--s4)) 0}
 <section id="farm">
   <div class="wrap split">
     <div class="media reveal">
-      <div class="main"><img decoding="async" src="img/cattle.jpg" alt="Στη φάρμα με τα μοσχάρια"></div>
-      <div class="inset"><img decoding="async" src="img/blackpigs.jpg" alt="Μαύροι χοίροι στη βοσκή"></div>
+      <div class="main"><img decoding="async" loading="lazy" src="img/cattle.webp" srcset="img/cattle-800.webp 800w, img/cattle.webp 1050w" sizes="(max-width:900px) 100vw, 60vw" alt="Στη φάρμα με τα μοσχάρια"></div>
+      <div class="inset"><img decoding="async" loading="lazy" src="img/blackpigs.webp" alt="Μαύροι χοίροι στη βοσκή"></div>
     </div>
     <div class="text reveal">
       <div class="eyebrow">Η φάρμα</div>
@@ -333,18 +427,34 @@ section{padding:clamp(var(--s3),9vw,var(--s4)) 0}
       <p>Ωριμάζουμε τα κομμάτια μας σε ειδικούς θαλάμους και τα συσκευάζουμε σε κενό αέρος, έτοιμα για το δικό σας ψήσιμο.</p>
     </div>
     <div class="cards">
-      <div class="card reveal"><img decoding="async" src="img/dryage.jpg" alt="Θάλαμος ωρίμανσης κρέατος"><div class="cap"><h3>Dry-aged</h3><p>Ωρίμανση σε ελεγχόμενο θάλαμο για βαθιά γεύση και τρυφερότητα.</p></div></div>
-      <div class="card reveal"><img decoding="async" src="img/butcher.jpg" alt="Κοπή tomahawk"><div class="cap"><h3>Tomahawk &amp; T-bone</h3><p>Μεγάλες μπριζόλες με κόκαλο, κομμένες από εμάς.</p></div></div>
-      <div class="card reveal"><img decoding="async" src="img/pack.jpg" alt="Συσκευασμένα κομμάτια σε κενό αέρος"><div class="cap"><h3>Σε κενό αέρος</h3><p>Ribeye, picanha και άλλα κομμάτια, συσκευασμένα με το σήμα μας.</p></div></div>
+      <div class="card reveal"><img decoding="async" loading="lazy" src="img/dryage.webp" srcset="img/dryage-800.webp 800w, img/dryage.webp 1050w" sizes="(max-width:900px) 100vw, 60vw" alt="Θάλαμος ωρίμανσης κρέατος"><div class="cap"><h3>Dry-aged</h3><p>Ωρίμανση σε ελεγχόμενο θάλαμο για βαθιά γεύση και τρυφερότητα.</p></div></div>
+      <div class="card reveal"><img decoding="async" loading="lazy" src="img/butcher.webp" srcset="img/butcher-800.webp 800w, img/butcher.webp 1050w" sizes="(max-width:900px) 100vw, 60vw" alt="Κοπή tomahawk"><div class="cap"><h3>Tomahawk &amp; T-bone</h3><p>Μεγάλες μπριζόλες με κόκαλο, κομμένες από εμάς.</p></div></div>
+      <div class="card reveal"><img decoding="async" loading="lazy" src="img/pack.webp" srcset="img/pack-800.webp 800w, img/pack.webp 1050w" sizes="(max-width:900px) 100vw, 60vw" alt="Συσκευασμένα κομμάτια σε κενό αέρος"><div class="cap"><h3>Σε κενό αέρος</h3><p>Ribeye, picanha και άλλα κομμάτια, συσκευασμένα με το σήμα μας.</p></div></div>
     </div>
+    <div class="shop">
+      <div class="item reveal"><h4>Tomahawk</h4><span class="price" data-price>Τιμή στο τηλέφωνο</span><p>Μεγάλη μπριζόλα με μακρύ κόκαλο, ωριμασμένη στον θάλαμό μας.</p>
+        <div class="ord"><a class="chip" href="tel:+306970513616">Κλήση</a><a class="chip" href="viber://chat?number=%2B306970513616">Viber</a><a class="chip" href="https://wa.me/306970513616?text=%CE%93%CE%B5%CE%B9%CE%B1%20%CF%83%CE%B1%CF%82%21%20%CE%98%CE%B1%20%CE%AE%CE%B8%CE%B5%CE%BB%CE%B1%20%CE%BD%CE%B1%20%CF%80%CE%B1%CF%81%CE%B1%CE%B3%CE%B3%CE%B5%CE%AF%CE%BB%CF%89%3A%20Tomahawk" target="_blank" rel="noopener">WhatsApp</a></div></div>
+      <div class="item reveal"><h4>T-bone</h4><span class="price" data-price>Τιμή στο τηλέφωνο</span><p>Φιλέτο και κόντρα σε ένα κομμάτι, για τα κάρβουνα.</p>
+        <div class="ord"><a class="chip" href="tel:+306970513616">Κλήση</a><a class="chip" href="viber://chat?number=%2B306970513616">Viber</a><a class="chip" href="https://wa.me/306970513616?text=%CE%93%CE%B5%CE%B9%CE%B1%20%CF%83%CE%B1%CF%82%21%20%CE%98%CE%B1%20%CE%AE%CE%B8%CE%B5%CE%BB%CE%B1%20%CE%BD%CE%B1%20%CF%80%CE%B1%CF%81%CE%B1%CE%B3%CE%B3%CE%B5%CE%AF%CE%BB%CF%89%3A%20T-bone" target="_blank" rel="noopener">WhatsApp</a></div></div>
+      <div class="item reveal"><h4>Ribeye</h4><span class="price" data-price>Τιμή στο τηλέφωνο</span><p>Το πιο ζουμερό κομμάτι, με όμορφη μαρμαροποίηση.</p>
+        <div class="ord"><a class="chip" href="tel:+306970513616">Κλήση</a><a class="chip" href="viber://chat?number=%2B306970513616">Viber</a><a class="chip" href="https://wa.me/306970513616?text=%CE%93%CE%B5%CE%B9%CE%B1%20%CF%83%CE%B1%CF%82%21%20%CE%98%CE%B1%20%CE%AE%CE%B8%CE%B5%CE%BB%CE%B1%20%CE%BD%CE%B1%20%CF%80%CE%B1%CF%81%CE%B1%CE%B3%CE%B3%CE%B5%CE%AF%CE%BB%CF%89%3A%20Ribeye" target="_blank" rel="noopener">WhatsApp</a></div></div>
+      <div class="item reveal"><h4>Picanha</h4><span class="price" data-price>Τιμή στο τηλέφωνο</span><p>Το αγαπημένο κομμάτι της σχάρας, με το λίπος του.</p>
+        <div class="ord"><a class="chip" href="tel:+306970513616">Κλήση</a><a class="chip" href="viber://chat?number=%2B306970513616">Viber</a><a class="chip" href="https://wa.me/306970513616?text=%CE%93%CE%B5%CE%B9%CE%B1%20%CF%83%CE%B1%CF%82%21%20%CE%98%CE%B1%20%CE%AE%CE%B8%CE%B5%CE%BB%CE%B1%20%CE%BD%CE%B1%20%CF%80%CE%B1%CF%81%CE%B1%CE%B3%CE%B3%CE%B5%CE%AF%CE%BB%CF%89%3A%20Picanha" target="_blank" rel="noopener">WhatsApp</a></div></div>
+      <div class="item reveal"><h4>Μαύρος χοίρος · μπριζόλες</h4><span class="price" data-price>Τιμή στο τηλέφωνο</span><p>Από τους μαύρους χοίρους της φάρμας μας, με γεύση που ξεχωρίζει.</p>
+        <div class="ord"><a class="chip" href="tel:+306970513616">Κλήση</a><a class="chip" href="viber://chat?number=%2B306970513616">Viber</a><a class="chip" href="https://wa.me/306970513616?text=%CE%93%CE%B5%CE%B9%CE%B1%20%CF%83%CE%B1%CF%82%21%20%CE%98%CE%B1%20%CE%AE%CE%B8%CE%B5%CE%BB%CE%B1%20%CE%BD%CE%B1%20%CF%80%CE%B1%CF%81%CE%B1%CE%B3%CE%B3%CE%B5%CE%AF%CE%BB%CF%89%3A%20%CE%9C%CE%B1%CF%8D%CF%81%CE%BF%CF%82%20%CF%87%CE%BF%CE%AF%CF%81%CE%BF%CF%82%20%C2%B7%20%CE%BC%CF%80%CF%81%CE%B9%CE%B6%CF%8C%CE%BB%CE%B5%CF%82" target="_blank" rel="noopener">WhatsApp</a></div></div>
+      <div class="item reveal"><h4>Μαύρος χοίρος · πανσέτα</h4><span class="price" data-price>Τιμή στο τηλέφωνο</span><p>Παχιά, γευστική πανσέτα για αργό ψήσιμο ή σούβλα.</p>
+        <div class="ord"><a class="chip" href="tel:+306970513616">Κλήση</a><a class="chip" href="viber://chat?number=%2B306970513616">Viber</a><a class="chip" href="https://wa.me/306970513616?text=%CE%93%CE%B5%CE%B9%CE%B1%20%CF%83%CE%B1%CF%82%21%20%CE%98%CE%B1%20%CE%AE%CE%B8%CE%B5%CE%BB%CE%B1%20%CE%BD%CE%B1%20%CF%80%CE%B1%CF%81%CE%B1%CE%B3%CE%B3%CE%B5%CE%AF%CE%BB%CF%89%3A%20%CE%9C%CE%B1%CF%8D%CF%81%CE%BF%CF%82%20%CF%87%CE%BF%CE%AF%CF%81%CE%BF%CF%82%20%C2%B7%20%CF%80%CE%B1%CE%BD%CF%83%CE%AD%CF%84%CE%B1" target="_blank" rel="noopener">WhatsApp</a></div></div>
+    </div>
+    <p class="shopnote reveal">Όλα τα κομμάτια συσκευάζονται σε κενό αέρος. Ρωτήστε μας για διαθεσιμότητα, βάρος και τιμή.</p>
+
   </div>
 </section>
 
 <section id="pig">
   <div class="wrap split">
     <div class="media reveal">
-      <div class="main"><img decoding="async" src="img/piglet.jpg" alt="Μαύρο χοιρινό της φάρμας μας"></div>
-      <div class="inset"><img decoding="async" src="img/pigsherd.jpg" alt="Οι μαύροι χοίροι στη φάρμα μας"></div>
+      <div class="main"><img decoding="async" loading="lazy" src="img/piglet.webp" srcset="img/piglet-800.webp 800w, img/piglet.webp 1050w" sizes="(max-width:900px) 100vw, 60vw" alt="Μαύρο χοιρινό της φάρμας μας"></div>
+      <div class="inset"><img decoding="async" loading="lazy" src="img/pigsherd.webp" alt="Οι μαύροι χοίροι στη φάρμα μας"></div>
     </div>
     <div class="text reveal">
       <div class="eyebrow">Ο μαύρος χοίρος μας</div>
@@ -366,8 +476,8 @@ section{padding:clamp(var(--s3),9vw,var(--s4)) 0}
   <div class="wrap">
     <div class="split rev">
       <div class="media reveal">
-        <div class="main"><img decoding="async" src="img/grill.jpg" alt="Μπριζόλες στη σχάρα"></div>
-        <div class="inset"><img decoding="async" src="img/storefront.jpg" alt="Η είσοδος της ταβέρνας Η Τσιουργιάκα στο χιόνι"></div>
+        <div class="main"><img decoding="async" loading="lazy" src="img/grill.webp" srcset="img/grill-800.webp 800w, img/grill.webp 1050w" sizes="(max-width:900px) 100vw, 60vw" alt="Μπριζόλες στη σχάρα"></div>
+        <div class="inset"><img decoding="async" loading="lazy" src="img/storefront.webp" alt="Η είσοδος της ταβέρνας Η Τσιουργιάκα στο χιόνι"></div>
       </div>
       <div class="text reveal">
         <div class="eyebrow">Παραδοσιακή ταβέρνα</div>
@@ -383,16 +493,31 @@ section{padding:clamp(var(--s3),9vw,var(--s4)) 0}
       </div>
     </div>
     <div class="mosaic">
-      <figure class="w2 h2 reveal"><img decoding="async" src="img/feast.jpg" alt="Γλέντι στην πλατεία το βράδυ"></figure>
-      <figure class="reveal"><img decoding="async" src="img/spit.jpg" alt="Κρέας στη σούβλα"></figure>
-      <figure class="reveal"><img decoding="async" src="img/ribeye2.jpg" alt="Ribeye σε συσκευασία"></figure>
-      <figure class="w2 reveal"><img decoding="async" src="img/night.jpg" alt="Βραδιά στην ταβέρνα κάτω από τα δέντρα"></figure>
+      <figure class="w2 h2 reveal"><img decoding="async" loading="lazy" src="img/feast.webp" alt="Γλέντι στην πλατεία το βράδυ"></figure>
+      <figure class="reveal"><img decoding="async" loading="lazy" src="img/spit.webp" alt="Κρέας στη σούβλα"></figure>
+      <figure class="reveal"><img decoding="async" loading="lazy" src="img/ribeye2.webp" srcset="img/ribeye2-800.webp 800w, img/ribeye2.webp 1050w" sizes="(max-width:900px) 100vw, 60vw" alt="Ribeye σε συσκευασία"></figure>
+      <figure class="w2 reveal"><img decoding="async" loading="lazy" src="img/night.webp" alt="Βραδιά στην ταβέρνα κάτω από τα δέντρα"></figure>
+    </div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="wrap">
+    <div class="head reveal">
+      <div><div class="eyebrow">Η ιστορία μας</div><h2>Μια οικογένεια,<br>ένα βουνό.</h2></div>
+      <p>Από το 1936 η οικογένεια Μπατσίλα ζει και δουλεύει στην Αετιά. Με τα χρόνια, η φάρμα έγινε κρεοπωλείο, ταβέρνα και φιλόξενο σπίτι για όσους ανεβαίνουν στο βουνό.</p>
+    </div>
+    <div class="timeline">
+      <div class="step reveal"><b>1936</b><h4>Η αρχή</h4><p>Η οικογένεια ξεκινά στην Αετιά με τα ζώα και τη γη της.</p></div>
+      <div class="step reveal"><b>Φάρμα</b><h4>Τα δικά μας ζώα</h4><p>Μοσχάρια, μαύροι χοίροι και πρόβατα σε ελεύθερη βοσκή.</p></div>
+      <div class="step reveal"><b>Ταβέρνα</b><h4>«Η Τσιουργιάκα»</h4><p>Τζάκι, κάρβουνα και το τραπέζι κάτω από τον πλάτανο.</p></div>
+      <div class="step reveal"><b>Σήμερα</b><h4>Mpatsilas Group</h4><p>Κρεοπωλείο, κρέας ωρίμανσης, ταβέρνα και δωμάτια.</p></div>
     </div>
   </div>
 </section>
 
 <div class="quote">
-  <img decoding="async" src="img/village.jpg" alt="Η Αετιά χιονισμένη">
+  <img decoding="async" loading="lazy" src="img/village.webp" alt="Η Αετιά χιονισμένη">
   <div class="wrap">
     <blockquote class="reveal">Από το 1936. Το ίδιο βουνό, η ίδια φωτιά.</blockquote>
     <cite class="eyebrow reveal">Οικογένεια Μπατσίλα · Αετιά</cite>
@@ -413,8 +538,29 @@ section{padding:clamp(var(--s3),9vw,var(--s4)) 0}
       </ul>
     </div>
     <div class="media reveal">
-      <div class="main"><img decoding="async" src="img/skilift.jpg" alt="Αναβατήρας στη Βασιλίτσα στο χιόνι"></div>
-      <div class="inset"><img decoding="async" src="img/snowpeak.jpg" alt="Χιονισμένα βουνά της Βασιλίτσας"></div>
+      <div class="main"><img decoding="async" loading="lazy" src="img/skilift.webp" alt="Αναβατήρας στη Βασιλίτσα στο χιόνι"></div>
+      <div class="inset"><img decoding="async" loading="lazy" src="img/snowpeak.webp" alt="Χιονισμένα βουνά της Βασιλίτσας"></div>
+    </div>
+  </div>
+</section>
+
+<section id="rooms" class="rooms">
+  <div class="wrap split rev">
+    <div class="media reveal">
+      <div class="main"><img decoding="async" loading="lazy" src="img/snowhouse.webp" alt="Το κατάλυμά μας στην Αετιά το χειμώνα"></div>
+      <div class="inset"><img decoding="async" loading="lazy" src="img/fireplace.webp" srcset="img/fireplace-800.webp 800w, img/fireplace.webp 1050w" sizes="(max-width:900px) 100vw, 60vw" alt="Το τζάκι"></div>
+    </div>
+    <div class="text reveal">
+      <div class="eyebrow">Ενοικιαζόμενα δωμάτια</div>
+      <h2>Μείνετε στο βουνό.</h2>
+      <p>Ξυπνήστε στην Αετιά, με τη Βασιλίτσα δίπλα σας. Το πρωί στις πίστες ή στα μονοπάτια, το βράδυ στο τζάκι και στο τραπέζι της ταβέρνας μας.</p>
+      <div class="feat">
+        <div><b>Αετιά</b><small>Στην καρδιά του χωριού</small></div>
+        <div><b>Βασιλίτσα</b><small>Σκι &amp; πεζοπορία κοντά</small></div>
+        <div><b>Ταβέρνα</b><small>Φαγητό δίπλα σας</small></div>
+      </div>
+      <a class="btn" href="#contact" data-pick="room">Ρωτήστε διαθεσιμότητα</a>
+      <!-- Booking / Airbnb: προσθέστε εδώ κουμπιά όταν υπάρχουν links -->
     </div>
   </div>
 </section>
@@ -422,42 +568,78 @@ section{padding:clamp(var(--s3),9vw,var(--s4)) 0}
 <section id="aetia">
   <div class="wrap">
     <div class="head reveal">
-      <div><div class="eyebrow">Ενοικιαζόμενα δωμάτια</div><h2>Μείνετε στην Αετιά.</h2></div>
-      <p>Χιονισμένα δάση το χειμώνα, φαράγγια, λίμνες και άλογα στα λιβάδια την άνοιξη. Τα δωμάτιά μας είναι η αφετηρία σας για τα βουνά των Γρεβενών.</p>
+      <div><div class="eyebrow">Αετιά · Γρεβενά</div><h2>Ο τόπος μας.</h2></div>
+      <p>Χιονισμένα δάση το χειμώνα, φαράγγια, λίμνες και άλογα στα λιβάδια την άνοιξη. Αυτά είναι τα βουνά των Γρεβενών.</p>
     </div>
     <div class="gallery reveal">
-      <img decoding="async" src="img/gorge.jpg" alt="Το φαράγγι από ψηλά">
-      <img decoding="async" src="img/snowhouse.jpg" alt="Το κατάλυμα στο χιόνι">
-      <img decoding="async" src="img/horses.jpg" alt="Άλογα στο χιόνι">
-      <img decoding="async" src="img/lake.jpg" alt="Ορεινή λίμνη">
-      <img decoding="async" src="img/piglet.jpg" alt="Γουρουνάκι της φάρμας">
-      <img decoding="async" src="img/cows.jpg" alt="Αγελάδες στη βοσκή">
-      <img decoding="async" src="img/night2.jpg" alt="Καλοκαιρινή βραδιά">
-      <img decoding="async" src="img/butcher2.jpg" alt="Στο εργαστήριο">
+      <img decoding="async" loading="lazy" src="img/gorge.webp" alt="Το φαράγγι από ψηλά">
+      <img decoding="async" loading="lazy" src="img/snowhouse.webp" alt="Το κατάλυμα στο χιόνι">
+      <img decoding="async" loading="lazy" src="img/horses.webp" alt="Άλογα στο χιόνι">
+      <img decoding="async" loading="lazy" src="img/lake.webp" alt="Ορεινή λίμνη">
+      <img decoding="async" loading="lazy" src="img/piglet.webp" srcset="img/piglet-800.webp 800w, img/piglet.webp 1050w" sizes="(max-width:900px) 100vw, 60vw" alt="Γουρουνάκι της φάρμας">
+      <img decoding="async" loading="lazy" src="img/cows.webp" alt="Αγελάδες στη βοσκή">
+      <img decoding="async" loading="lazy" src="img/night2.webp" alt="Καλοκαιρινή βραδιά">
+      <img decoding="async" loading="lazy" src="img/butcher2.webp" srcset="img/butcher2-800.webp 800w, img/butcher2.webp 1050w" sizes="(max-width:900px) 100vw, 60vw" alt="Στο εργαστήριο">
     </div>
+  </div>
+</section>
+
+<section class="reviews products" id="reviews">
+  <div class="wrap reveal">
+    <div class="eyebrow">Οι επισκέπτες μας</div>
+    <h2>Ελάτε, δοκιμάστε, πείτε μας τη γνώμη σας.</h2>
+    <p>Διαβάστε τι λένε όσοι πέρασαν από την «Τσιουργιάκα», ή αφήστε κι εσείς την κριτική σας στη Google.</p>
+    <div class="row"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%CE%A4%CF%83%CE%B9%CE%BF%CF%85%CF%81%CE%B3%CE%B9%CE%AC%CE%BA%CE%B1+%CE%91%CE%B5%CF%84%CE%B9%CE%AC+%CE%93%CF%81%CE%B5%CE%B2%CE%B5%CE%BD%CE%AC" target="_blank" rel="noopener">Κριτικές στη Google</a></div>
   </div>
 </section>
 
 <section class="contact" id="contact">
   <div class="wrap split">
     <div class="reveal">
-      <div class="eyebrow">Επικοινωνία</div>
+      <div class="eyebrow">Κράτηση · Επικοινωνία</div>
       <h2>Ελάτε να μας βρείτε.</h2>
-      <p>Για κρατήσεις στην ταβέρνα, στα δωμάτια ή για παραγγελίες κρέατος, καλέστε μας.</p>
+      <p>Κλείστε τραπέζι, ρωτήστε για δωμάτια ή παραγγείλτε κρέας. Συμπληρώστε τη φόρμα και στείλτε τη με ένα πάτημα, ή απλά καλέστε μας.</p>
       <div class="info">
         <div><small>Τηλέφωνο</small><a href="tel:+306970513616">697 051 3616</a></div>
         <div><small>Τοποθεσία</small><span>Αετιά, Γρεβενά</span></div>
+        <!-- <div><small>Ωράριο</small><span>…</span></div> -->
+        <!-- <div><small>Email</small><a href="mailto:…">…</a></div> -->
       </div>
-      <p style="margin-top:2em"><a class="btn" href="https://maps.google.com/?q=Αετιά+Γρεβενά" target="_blank" rel="noopener">Οδηγίες στο χάρτη</a></p>
+      <a class="mapcard" href="https://www.google.com/maps/search/?api=1&query=%CE%91%CE%B5%CF%84%CE%B9%CE%AC+%CE%93%CF%81%CE%B5%CE%B2%CE%B5%CE%BD%CE%AC" target="_blank" rel="noopener">
+        <img decoding="async" loading="lazy" src="img/village.webp" alt="Η Αετιά">
+        <span class="pin"><span><svg viewBox="0 0 24 24" fill="#d4a24c"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><b>Αετιά, Γρεβενά</b><small>Οδηγίες στο Google Maps →</small></span></span>
+      </a>
     </div>
-    <iframe class="map reveal" loading="lazy" title="Χάρτης Αετιάς" src="https://www.google.com/maps?q=%CE%91%CE%B5%CF%84%CE%B9%CE%AC%20%CE%93%CF%81%CE%B5%CE%B2%CE%B5%CE%BD%CE%AC&output=embed"></iframe>
+    <form class="book reveal" id="book" novalidate>
+      <h3>Κάντε κράτηση</h3>
+      <div class="tabs" role="radiogroup" aria-label="Τύπος">
+        <label><input type="radio" name="t" value="table" checked><span>Τραπέζι</span></label>
+        <label><input type="radio" name="t" value="room"><span>Δωμάτιο</span></label>
+        <label><input type="radio" name="t" value="meat"><span>Κρέας</span></label>
+      </div>
+      <div class="fgrid">
+        <label class="f">Όνομα<input name="name" autocomplete="name" required></label>
+        <label class="f">Άτομα<input name="people" type="number" min="1" inputmode="numeric" value="2"></label>
+        <label class="f">Ημερομηνία<input name="date" type="date"></label>
+        <label class="f" data-for="table">Ώρα<input name="time" type="time" value="20:00"></label>
+        <label class="f" data-for="room" hidden>Νύχτες<input name="nights" type="number" min="1" inputmode="numeric" value="2"></label>
+        <label class="f full">Σχόλια<textarea name="notes" placeholder="π.χ. tomahawk 1,2 kg, τραπέζι δίπλα στο τζάκι…"></textarea></label>
+      </div>
+      <div class="sendrow">
+        <a class="btn" data-send="wa" href="#">WhatsApp</a>
+        <a class="btn ghost" data-send="viber" href="#">Viber</a>
+        <a class="btn ghost" data-send="sms" href="#">SMS</a>
+      </div>
+      <p class="formnote">Το μήνυμα ανοίγει έτοιμο στην εφαρμογή σας. Εμείς σας απαντάμε για επιβεβαίωση.</p>
+    </form>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     <span>© <span id="y"></span> Mpatsilas Group · Αετιά Γρεβενών · est. 1936</span>
-    <span>Ταβέρνα «Η Τσιουργιάκα» · Φάρμα · Δωμάτια</span>
+    <span>Ταβέρνα «Η Τσιουργιάκα» · Φάρμα · Κρεοπωλείο · Δωμάτια</span>
+    <!-- <span class="social"><a href="https://instagram.com/…">Instagram</a><a href="https://facebook.com/…">Facebook</a></span> -->
   </div>
 </footer>
 
@@ -491,6 +673,25 @@ addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
 // call bar
 const cb=document.getElementById('callbar');
 addEventListener('scroll',()=>cb.classList.toggle('show',scrollY>innerHeight*.618),{passive:true});
+// booking form
+const bf=document.getElementById('book');
+const T={table:'Κράτηση τραπεζιού',room:'Ερώτηση για δωμάτιο',meat:'Παραγγελία κρέατος'};
+const sync=()=>{const t=bf.t.value;bf.querySelectorAll('[data-for]').forEach(l=>l.hidden=l.dataset.for!==t)};
+bf.addEventListener('change',sync);sync();
+const fmt=d=>d?d.split('-').reverse().join('/'):'';
+const msg=()=>{const f=bf,t=f.t.value,L=[T[t]+' · Mpatsilas Group'];
+  if(f.name.value)L.push('Όνομα: '+f.name.value);
+  if(f.date.value)L.push('Ημερομηνία: '+fmt(f.date.value));
+  if(t==='table'&&f.time.value)L.push('Ώρα: '+f.time.value);
+  if(t==='room'&&f.nights.value)L.push('Νύχτες: '+f.nights.value);
+  if(f.people.value&&t!=='meat')L.push('Άτομα: '+f.people.value);
+  if(f.notes.value)L.push('Σχόλια: '+f.notes.value);return L.join('\n')};
+bf.querySelectorAll('[data-send]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();
+  if(!bf.name.value.trim()){bf.name.focus();bf.name.style.borderColor='#d4a24c';return}
+  const m=encodeURIComponent(msg()),k=b.dataset.send;
+  const url=k==='wa'?'https://wa.me/306970513616?text='+m:k==='viber'?'viber://forward?text='+m:'sms:+306970513616?&body='+m;
+  location.href=url;}));
+document.querySelectorAll('[data-pick]').forEach(a=>a.addEventListener('click',()=>{const r=bf.querySelector(`input[value="${a.dataset.pick}"]`);if(r){r.checked=true;sync()}}));
 </script>
 </body>
 </html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mpatsilasgroup.com/sitemap.xml
