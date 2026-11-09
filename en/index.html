@@ -350,6 +350,40 @@ section{padding:clamp(var(--s3),9vw,var(--s4)) 0}
   .fgrid{grid-template-columns:1fr}
   .mlang{position:absolute;top:22px;left:var(--gut);font-family:var(--sans)!important;font-size:.8rem!important;letter-spacing:.2em}
 }
+
+/* experiences */
+.exp{display:grid;grid-template-columns:1.618fr 1fr;gap:clamp(var(--s1),4vw,var(--s3));align-items:end;margin-top:var(--s3)}
+.exp.rev{grid-template-columns:1fr 1.618fr}.exp.rev .exp-main{order:2}
+.exp-main{aspect-ratio:1.618/1;overflow:hidden;border-radius:2px}
+.exp-main img{transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.exp:hover .exp-main img{transform:scale(1.04)}
+.exp-n{font-family:var(--serif);font-size:4.236rem;line-height:1;color:transparent;-webkit-text-stroke:1px var(--gold);display:block;margin-bottom:var(--s-1)}
+.exp-text h3{font-size:clamp(1.8rem,1.4rem + 1.4vw,2.618rem);margin-bottom:var(--s0)}
+.exp-side{margin-top:var(--s1);aspect-ratio:1.618/1;overflow:hidden;border-radius:2px}
+.exp-side.two{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-1);aspect-ratio:auto}
+.exp-side.two img{aspect-ratio:1/1.1}
+.falls{display:grid;grid-template-columns:1fr 1.618fr 1fr;gap:var(--s-1);margin-top:var(--s3)}
+.falls figure{position:relative;aspect-ratio:1/1.618;overflow:hidden;border-radius:2px}
+.falls figure:nth-child(2){aspect-ratio:auto}
+.falls figcaption{position:absolute;left:var(--s0);bottom:var(--s0);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--paper);text-shadow:0 2px 10px rgba(0,0,0,.8)}
+.exp-cta{text-align:center;margin:var(--s2) auto 0}
+@media (max-width:900px){
+  .exp,.exp.rev{grid-template-columns:1fr;margin-top:var(--s2)}
+  .exp.rev .exp-main{order:0}
+  .exp-main{aspect-ratio:1/1.1}
+  .exp-n{font-size:2.618rem}
+  .falls{grid-template-columns:1fr 1fr}
+  .falls figure:nth-child(2){grid-column:1/-1;grid-row:1;aspect-ratio:1.618/1}
+}
+
+/* nav fit */
+.links{gap:clamp(14px,1.6vw,26px);align-items:center;white-space:nowrap}
+.brand span{white-space:nowrap}
+@media (max-width:1320px){.links .call{display:none}}
+@media (max-width:1180px){.links{display:none!important}.burger{display:block!important}}
+.falls{grid-auto-rows:clamp(260px,34vw,500px)}
+.falls figure,.falls figure:nth-child(2){aspect-ratio:auto;height:100%}
+@media (max-width:900px){.falls{grid-auto-rows:220px}.falls figure:nth-child(2){aspect-ratio:auto}}
 </style>
 </head>
 <body>
@@ -358,7 +392,7 @@ section{padding:clamp(var(--s3),9vw,var(--s4)) 0}
   <div class="wrap">
     <a class="brand" href="#top"><img src="../img/logo.png" alt="Mpatsilas Group logo"><span>MPATSILAS GROUP</span></a>
     <div class="links">
-      <a href="#farm">Farm</a><a href="#meat">Meat</a><a href="#pig">Black pig</a><a href="#tavern">Tavern</a><a href="#vasilitsa">Vasilitsa</a><a href="#rooms">Rooms</a><a href="#contact">Book</a>
+      <a href="#farm">Farm</a><a href="#meat">Meat</a><a href="#pig">Black pig</a><a href="#tavern">Tavern</a><a href="#vasilitsa">Vasilitsa</a><a href="#explore">Experiences</a><a href="#rooms">Rooms</a><a href="#contact">Book</a>
       <a class="lang" href="../" hreflang="el" lang="el">ΕΛ</a>
       <a class="call" href="tel:+306970513616">697 051 3616</a>
     </div>
@@ -367,7 +401,7 @@ section{padding:clamp(var(--s3),9vw,var(--s4)) 0}
 </nav>
 
 <div class="mmenu" id="mmenu" aria-hidden="true">
-  <a href="#farm">Farm</a><a href="#meat">Meat</a><a href="#pig">Black pig</a><a href="#tavern">Tavern</a><a href="#vasilitsa">Vasilitsa</a><a href="#rooms">Rooms</a><a href="#contact">Book</a>
+  <a href="#farm">Farm</a><a href="#meat">Meat</a><a href="#pig">Black pig</a><a href="#tavern">Tavern</a><a href="#vasilitsa">Vasilitsa</a><a href="#explore">Experiences</a><a href="#rooms">Rooms</a><a href="#contact">Book</a>
   <a class="btn" href="tel:+306970513616">Call · +30 697 051 3616</a>
   <a class="mlang" href="../" hreflang="el" lang="el">ΕΛ</a>
 </div>
@@ -517,7 +551,7 @@ section{padding:clamp(var(--s3),9vw,var(--s4)) 0}
 </section>
 
 <div class="quote">
-  <img decoding="async" loading="lazy" src="../img/village.webp" alt="Aetia under snow">
+  <img decoding="async" loading="lazy" src="../img/x-drone.webp" alt="The gorge and the road to Aetia from above">
   <div class="wrap">
     <blockquote class="reveal">Since 1936. The same mountain, the same fire.</blockquote>
     <cite class="eyebrow reveal">The Mpatsilas family · Aetia</cite>
@@ -533,7 +567,7 @@ section{padding:clamp(var(--s3),9vw,var(--s4)) 0}
       <p>In winter, skiing and snowboarding on the Vasilitsa slopes, then warmth by the fire and dinner at the tavern. In summer, hiking, off-road trips, mountain lakes and cool shade under the plane tree.</p>
       <ul class="list">
         <li>Ski &amp; snowboard at Vasilitsa</li>
-        <li>Hiking and off-road in the Pindus</li>
+        <li>Hiking, off-road and waterfalls in the Pindus</li>
         <li>Stay in our rooms in Aetia</li>
       </ul>
     </div>
@@ -541,6 +575,52 @@ section{padding:clamp(var(--s3),9vw,var(--s4)) 0}
       <div class="main"><img decoding="async" loading="lazy" src="../img/skilift.webp" alt="Chairlift at Vasilitsa in the snow"></div>
       <div class="inset"><img decoding="async" loading="lazy" src="../img/snowpeak.webp" alt="Snowy mountains of Vasilitsa"></div>
     </div>
+  </div>
+</section>
+
+<section id="explore">
+  <div class="wrap">
+    <div class="head reveal">
+      <div><div class="eyebrow">Live the mountain</div><h2>Horses, jeeps and fire<br>by the river.</h2></div>
+      <p>Aetia is more than food. It's days by the river, horses running free, dirt tracks for off-roading and waterfalls hidden in the gorges.</p>
+    </div>
+
+    <article class="exp reveal">
+      <div class="exp-main"><img decoding="async" loading="lazy" src="../img/x-rivergrill.webp" srcset="../img/x-rivergrill-800.webp 800w, ../img/x-rivergrill.webp 1200w" sizes="(max-width:900px) 100vw, 60vw" alt="Steaks on the fire by the river"></div>
+      <div class="exp-text">
+        <span class="exp-n">01</span>
+        <h3>Grilling by the river</h3>
+        <p>Dry-aged steaks on the coals, the sound of the water and the smell of woodsmoke. We take our meat where it was made to be cooked: out in nature, by the river.</p>
+        <div class="exp-side"><img decoding="async" loading="lazy" src="../img/x-jeepriver.webp" srcset="../img/x-jeepriver-800.webp 800w, ../img/x-jeepriver.webp 1200w" sizes="(max-width:900px) 100vw, 60vw" alt="A jeep on the riverbank"></div>
+      </div>
+    </article>
+
+    <article class="exp rev reveal">
+      <div class="exp-main"><img decoding="async" loading="lazy" src="../img/x-horsesriver.webp" srcset="../img/x-horsesriver-800.webp 800w, ../img/x-horsesriver.webp 1200w" sizes="(max-width:900px) 100vw, 60vw" alt="Horses in the river"></div>
+      <div class="exp-text">
+        <span class="exp-n">02</span>
+        <h3>Our horses</h3>
+        <p>Our horses graze freely in the meadows and come down to the river to drink. Our little visitors feed them carrots and get to know farm life up close.</p>
+        <div class="exp-side two"><img decoding="async" loading="lazy" src="../img/x-kidhorse.webp" srcset="../img/x-kidhorse-800.webp 800w, ../img/x-kidhorse.webp 1200w" sizes="(max-width:900px) 100vw, 60vw" alt="A child feeding a horse"><img decoding="async" loading="lazy" src="../img/x-horse.webp" srcset="../img/x-horse-800.webp 800w, ../img/x-horse.webp 1200w" sizes="(max-width:900px) 100vw, 60vw" alt="A horse grazing"></div>
+      </div>
+    </article>
+
+    <article class="exp reveal">
+      <div class="exp-main"><img decoding="async" loading="lazy" src="../img/x-jeepoff.webp" srcset="../img/x-jeepoff-800.webp 800w, ../img/x-jeepoff.webp 1200w" sizes="(max-width:900px) 100vw, 60vw" alt="A jeep on an off-road forest track"></div>
+      <div class="exp-text">
+        <span class="exp-n">03</span>
+        <h3>Off-road in the Pindus</h3>
+        <p>Dirt tracks through the fir forest, river crossings and peaks with views across the Pindus. Our jeeps know every route, through snow, mud and rock.</p>
+        <div class="exp-side"><img decoding="async" loading="lazy" src="../img/x-jeeps.webp" srcset="../img/x-jeeps-800.webp 800w, ../img/x-jeeps.webp 1200w" sizes="(max-width:900px) 100vw, 60vw" alt="Our jeeps in Aetia"></div>
+      </div>
+    </article>
+
+    <div class="falls">
+      <figure class="reveal"><img decoding="async" loading="lazy" src="../img/x-waterfall.webp" srcset="../img/x-waterfall-800.webp 800w, ../img/x-waterfall.webp 1200w" sizes="(max-width:900px) 100vw, 60vw" alt="A waterfall in the gorge"><figcaption>Waterfalls</figcaption></figure>
+      <figure class="reveal"><img decoding="async" loading="lazy" src="../img/x-pool.webp" srcset="../img/x-pool-800.webp 800w, ../img/x-pool.webp 1200w" sizes="(max-width:900px) 100vw, 60vw" alt="A natural pool below a waterfall"><figcaption>Natural pools</figcaption></figure>
+      <figure class="reveal"><img decoding="async" loading="lazy" src="../img/x-horseshill.webp" srcset="../img/x-horseshill-800.webp 800w, ../img/x-horseshill.webp 1200w" sizes="(max-width:900px) 100vw, 60vw" alt="Horses in the meadow"><figcaption>Open meadows</figcaption></figure>
+    </div>
+    <p class="exp-cta reveal"><a class="btn" href="#contact">Ask us about trips</a></p>
   </div>
 </section>
 

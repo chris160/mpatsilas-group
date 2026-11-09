@@ -350,6 +350,40 @@ section{padding:clamp(var(--s3),9vw,var(--s4)) 0}
   .fgrid{grid-template-columns:1fr}
   .mlang{position:absolute;top:22px;left:var(--gut);font-family:var(--sans)!important;font-size:.8rem!important;letter-spacing:.2em}
 }
+
+/* experiences */
+.exp{display:grid;grid-template-columns:1.618fr 1fr;gap:clamp(var(--s1),4vw,var(--s3));align-items:end;margin-top:var(--s3)}
+.exp.rev{grid-template-columns:1fr 1.618fr}.exp.rev .exp-main{order:2}
+.exp-main{aspect-ratio:1.618/1;overflow:hidden;border-radius:2px}
+.exp-main img{transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.exp:hover .exp-main img{transform:scale(1.04)}
+.exp-n{font-family:var(--serif);font-size:4.236rem;line-height:1;color:transparent;-webkit-text-stroke:1px var(--gold);display:block;margin-bottom:var(--s-1)}
+.exp-text h3{font-size:clamp(1.8rem,1.4rem + 1.4vw,2.618rem);margin-bottom:var(--s0)}
+.exp-side{margin-top:var(--s1);aspect-ratio:1.618/1;overflow:hidden;border-radius:2px}
+.exp-side.two{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-1);aspect-ratio:auto}
+.exp-side.two img{aspect-ratio:1/1.1}
+.falls{display:grid;grid-template-columns:1fr 1.618fr 1fr;gap:var(--s-1);margin-top:var(--s3)}
+.falls figure{position:relative;aspect-ratio:1/1.618;overflow:hidden;border-radius:2px}
+.falls figure:nth-child(2){aspect-ratio:auto}
+.falls figcaption{position:absolute;left:var(--s0);bottom:var(--s0);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--paper);text-shadow:0 2px 10px rgba(0,0,0,.8)}
+.exp-cta{text-align:center;margin:var(--s2) auto 0}
+@media (max-width:900px){
+  .exp,.exp.rev{grid-template-columns:1fr;margin-top:var(--s2)}
+  .exp.rev .exp-main{order:0}
+  .exp-main{aspect-ratio:1/1.1}
+  .exp-n{font-size:2.618rem}
+  .falls{grid-template-columns:1fr 1fr}
+  .falls figure:nth-child(2){grid-column:1/-1;grid-row:1;aspect-ratio:1.618/1}
+}
+
+/* nav fit */
+.links{gap:clamp(14px,1.6vw,26px);align-items:center;white-space:nowrap}
+.brand span{white-space:nowrap}
+@media (max-width:1320px){.links .call{display:none}}
+@media (max-width:1180px){.links{display:none!important}.burger{display:block!important}}
+.falls{grid-auto-rows:clamp(260px,34vw,500px)}
+.falls figure,.falls figure:nth-child(2){aspect-ratio:auto;height:100%}
+@media (max-width:900px){.falls{grid-auto-rows:220px}.falls figure:nth-child(2){aspect-ratio:auto}}
 </style>
 </head>
 <body>
@@ -358,7 +392,7 @@ section{padding:clamp(var(--s3),9vw,var(--s4)) 0}
   <div class="wrap">
     <a class="brand" href="#top"><img src="img/logo.png" alt="Λογότυπο Mpatsilas Group"><span>MPATSILAS GROUP</span></a>
     <div class="links">
-      <a href="#farm">Φάρμα</a><a href="#meat">Κρέατα</a><a href="#pig">Μαύρος χοίρος</a><a href="#tavern">Ταβέρνα</a><a href="#vasilitsa">Βασιλίτσα</a><a href="#rooms">Δωμάτια</a><a href="#contact">Κράτηση</a>
+      <a href="#farm">Φάρμα</a><a href="#meat">Κρέατα</a><a href="#pig">Μαύρος χοίρος</a><a href="#tavern">Ταβέρνα</a><a href="#vasilitsa">Βασιλίτσα</a><a href="#explore">Εμπειρίες</a><a href="#rooms">Δωμάτια</a><a href="#contact">Κράτηση</a>
       <a class="lang" href="en/" hreflang="en" lang="en">EN</a>
       <a class="call" href="tel:+306970513616">697 051 3616</a>
     </div>
@@ -367,7 +401,7 @@ section{padding:clamp(var(--s3),9vw,var(--s4)) 0}
 </nav>
 
 <div class="mmenu" id="mmenu" aria-hidden="true">
-  <a href="#farm">Φάρμα</a><a href="#meat">Κρέατα</a><a href="#pig">Μαύρος χοίρος</a><a href="#tavern">Ταβέρνα</a><a href="#vasilitsa">Βασιλίτσα</a><a href="#rooms">Δωμάτια</a><a href="#contact">Κράτηση</a>
+  <a href="#farm">Φάρμα</a><a href="#meat">Κρέατα</a><a href="#pig">Μαύρος χοίρος</a><a href="#tavern">Ταβέρνα</a><a href="#vasilitsa">Βασιλίτσα</a><a href="#explore">Εμπειρίες</a><a href="#rooms">Δωμάτια</a><a href="#contact">Κράτηση</a>
   <a class="btn" href="tel:+306970513616">Κλήση · 697 051 3616</a>
   <a class="mlang" href="en/" hreflang="en" lang="en">EN</a>
 </div>
@@ -517,7 +551,7 @@ section{padding:clamp(var(--s3),9vw,var(--s4)) 0}
 </section>
 
 <div class="quote">
-  <img decoding="async" loading="lazy" src="img/village.webp" alt="Η Αετιά χιονισμένη">
+  <img decoding="async" loading="lazy" src="img/x-drone.webp" alt="Το φαράγγι και ο δρόμος προς την Αετιά από ψηλά">
   <div class="wrap">
     <blockquote class="reveal">Από το 1936. Το ίδιο βουνό, η ίδια φωτιά.</blockquote>
     <cite class="eyebrow reveal">Οικογένεια Μπατσίλα · Αετιά</cite>
@@ -533,7 +567,7 @@ section{padding:clamp(var(--s3),9vw,var(--s4)) 0}
       <p>Τον χειμώνα, σκι και snowboard στις πίστες της Βασιλίτσας, και μετά ζεστασιά στο τζάκι και φαγητό στην ταβέρνα. Το καλοκαίρι, πεζοπορία, off-road, ορεινές λίμνες και δροσιά κάτω από τον πλάτανο.</p>
       <ul class="list">
         <li>Σκι &amp; snowboard στη Βασιλίτσα</li>
-        <li>Πεζοπορία και off-road στην Πίνδο</li>
+        <li>Πεζοπορία, off-road και καταρράκτες στην Πίνδο</li>
         <li>Διαμονή στα δωμάτιά μας στην Αετιά</li>
       </ul>
     </div>
@@ -541,6 +575,52 @@ section{padding:clamp(var(--s3),9vw,var(--s4)) 0}
       <div class="main"><img decoding="async" loading="lazy" src="img/skilift.webp" alt="Αναβατήρας στη Βασιλίτσα στο χιόνι"></div>
       <div class="inset"><img decoding="async" loading="lazy" src="img/snowpeak.webp" alt="Χιονισμένα βουνά της Βασιλίτσας"></div>
     </div>
+  </div>
+</section>
+
+<section id="explore">
+  <div class="wrap">
+    <div class="head reveal">
+      <div><div class="eyebrow">Ζήστε το βουνό</div><h2>Άλογα, jeep και φωτιά<br>δίπλα στο ποτάμι.</h2></div>
+      <p>Η Αετιά δεν είναι μόνο φαγητό. Είναι μέρες στο ποτάμι, άλογα που τρέχουν ελεύθερα, χωματόδρομοι για off-road και καταρράκτες κρυμμένοι στα φαράγγια.</p>
+    </div>
+
+    <article class="exp reveal">
+      <div class="exp-main"><img decoding="async" loading="lazy" src="img/x-rivergrill.webp" srcset="img/x-rivergrill-800.webp 800w, img/x-rivergrill.webp 1200w" sizes="(max-width:900px) 100vw, 60vw" alt="Μπριζόλες στη φωτιά δίπλα στο ποτάμι"></div>
+      <div class="exp-text">
+        <span class="exp-n">01</span>
+        <h3>Ψήσιμο στο ποτάμι</h3>
+        <p>Μπριζόλες ωρίμανσης πάνω στα κάρβουνα, ο ήχος του νερού και η μυρωδιά από τα ξύλα. Παίρνουμε το κρέας μας εκεί που φτιάχτηκε για να ψηθεί: στη φύση, δίπλα στο ποτάμι.</p>
+        <div class="exp-side"><img decoding="async" loading="lazy" src="img/x-jeepriver.webp" srcset="img/x-jeepriver-800.webp 800w, img/x-jeepriver.webp 1200w" sizes="(max-width:900px) 100vw, 60vw" alt="Jeep στις όχθες του ποταμού"></div>
+      </div>
+    </article>
+
+    <article class="exp rev reveal">
+      <div class="exp-main"><img decoding="async" loading="lazy" src="img/x-horsesriver.webp" srcset="img/x-horsesriver-800.webp 800w, img/x-horsesriver.webp 1200w" sizes="(max-width:900px) 100vw, 60vw" alt="Άλογα στο ποτάμι"></div>
+      <div class="exp-text">
+        <span class="exp-n">02</span>
+        <h3>Τα άλογά μας</h3>
+        <p>Τα άλογα βόσκουν ελεύθερα στα λιβάδια και κατεβαίνουν να πιουν νερό στο ποτάμι. Οι μικροί φίλοι μας τα ταΐζουν καρότα και γνωρίζουν από κοντά τη ζωή της φάρμας.</p>
+        <div class="exp-side two"><img decoding="async" loading="lazy" src="img/x-kidhorse.webp" srcset="img/x-kidhorse-800.webp 800w, img/x-kidhorse.webp 1200w" sizes="(max-width:900px) 100vw, 60vw" alt="Παιδί ταΐζει άλογο"><img decoding="async" loading="lazy" src="img/x-horse.webp" srcset="img/x-horse-800.webp 800w, img/x-horse.webp 1200w" sizes="(max-width:900px) 100vw, 60vw" alt="Άλογο στη βοσκή"></div>
+      </div>
+    </article>
+
+    <article class="exp reveal">
+      <div class="exp-main"><img decoding="async" loading="lazy" src="img/x-jeepoff.webp" srcset="img/x-jeepoff-800.webp 800w, img/x-jeepoff.webp 1200w" sizes="(max-width:900px) 100vw, 60vw" alt="Jeep σε off-road διαδρομή στο δάσος"></div>
+      <div class="exp-text">
+        <span class="exp-n">03</span>
+        <h3>Off-road στην Πίνδο</h3>
+        <p>Χωματόδρομοι μέσα στα έλατα, περάσματα από ποτάμια και κορυφές με θέα σε όλη την Πίνδο. Τα jeep μας ξέρουν κάθε διαδρομή, σε χιόνι, λάσπη και βράχο.</p>
+        <div class="exp-side"><img decoding="async" loading="lazy" src="img/x-jeeps.webp" srcset="img/x-jeeps-800.webp 800w, img/x-jeeps.webp 1200w" sizes="(max-width:900px) 100vw, 60vw" alt="Τα jeep μας στην Αετιά"></div>
+      </div>
+    </article>
+
+    <div class="falls">
+      <figure class="reveal"><img decoding="async" loading="lazy" src="img/x-waterfall.webp" srcset="img/x-waterfall-800.webp 800w, img/x-waterfall.webp 1200w" sizes="(max-width:900px) 100vw, 60vw" alt="Καταρράκτης στο φαράγγι"><figcaption>Καταρράκτες</figcaption></figure>
+      <figure class="reveal"><img decoding="async" loading="lazy" src="img/x-pool.webp" srcset="img/x-pool-800.webp 800w, img/x-pool.webp 1200w" sizes="(max-width:900px) 100vw, 60vw" alt="Φυσική λίμνη κάτω από καταρράκτη"><figcaption>Φυσικές πισίνες</figcaption></figure>
+      <figure class="reveal"><img decoding="async" loading="lazy" src="img/x-horseshill.webp" srcset="img/x-horseshill-800.webp 800w, img/x-horseshill.webp 1200w" sizes="(max-width:900px) 100vw, 60vw" alt="Άλογα στο λιβάδι"><figcaption>Ελεύθερα λιβάδια</figcaption></figure>
+    </div>
+    <p class="exp-cta reveal"><a class="btn" href="#contact">Ρωτήστε μας για εξορμήσεις</a></p>
   </div>
 </section>
 
