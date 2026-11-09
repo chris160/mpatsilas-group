@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mpatsilas Group · Αετιά Γρεβενών</title>
+<meta name="description" content="Mpatsilas Group, Αετιά Γρεβενών, από το 1936. Παραδοσιακή ταβέρνα «Η Τσιουργιάκα», φάρμα, κρέας ωρίμανσης και ενοικιαζόμενα δωμάτια.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0d0c0a; --ink2:#17150f; --line:#2c271c;
+  --gold:#d4a24c; --gold2:#f0c878; --paper:#efe7d8; --mute:#a89e8a;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--paper);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:.75rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.05;letter-spacing:-.01em}
+h2{font-size:clamp(2.2rem,5vw,3.6rem);margin:.4em 0 .5em}
+h3{font-size:1.7rem}
+p{color:#d9d0bf}
+.btn{display:inline-flex;align-items:center;gap:.6em;padding:.95em 1.6em;border:1px solid var(--gold);color:var(--ink);background:var(--gold);text-decoration:none;font-weight:700;font-size:.9rem;letter-spacing:.06em;border-radius:2px;transition:background .2s,color .2s}
+.btn:hover{background:var(--gold2)}
+.btn.ghost{background:transparent;color:var(--gold)}
+.btn.ghost:hover{background:var(--gold);color:var(--ink)}
+
+/* nav */
+nav{position:fixed;inset:0 0 auto 0;z-index:20;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+nav.solid{background:rgba(13,12,10,.92);backdrop-filter:blur(10px);border-color:var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:40px;height:48px;object-fit:contain}
+.brand span{font-family:var(--serif);font-size:1.35rem;font-weight:700;letter-spacing:.04em}
+.links{display:flex;gap:28px;font-size:.88rem}
+.links a{text-decoration:none;color:#cfc6b4}
+.links a:hover{color:var(--gold)}
+.call{font-weight:700;color:var(--gold)!important}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.hero>img{position:absolute;inset:0;object-position:center 60%;transform:scale(1.05);animation:zoom 18s ease-out forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.55) 0%,rgba(13,12,10,.2) 35%,rgba(13,12,10,.92) 85%,var(--ink) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-bottom:12vh}
+.hero h1{font-size:clamp(3rem,9vw,7.2rem);max-width:12ch}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero p{max-width:46ch;font-size:1.1rem;margin:1.2em 0 2em}
+.hero .row{display:flex;gap:14px;flex-wrap:wrap}
+
+/* stats strip */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--ink2)}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.strip div{padding:28px 10px;text-align:center;border-left:1px solid var(--line)}
+.strip div:first-child{border-left:0}
+.strip b{display:block;font-family:var(--serif);font-size:2.4rem;color:var(--gold);line-height:1}
+.strip small{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+
+section{padding:120px 0}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.split.rev .media{order:2}
+.media{position:relative}
+.media .main{aspect-ratio:4/5;overflow:hidden;border-radius:2px}
+.media .inset{position:absolute;width:42%;aspect-ratio:3/4;bottom:-40px;right:-28px;border:6px solid var(--ink);overflow:hidden}
+.split.rev .media .inset{right:auto;left:-28px}
+.text p+p{margin-top:1em}
+.list{list-style:none;margin:1.8em 0 2.2em;display:grid;gap:12px}
+.list li{display:flex;gap:14px;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:12px}
+.list li::before{content:"";width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex:none;translate:0 -2px}
+
+/* products */
+.products{background:var(--ink2)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:48px;flex-wrap:wrap}
+.head p{max-width:44ch}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:2px}
+.card img{transition:transform .8s ease}
+.card:hover img{transform:scale(1.06)}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.85))}
+.card .cap{position:absolute;left:22px;right:22px;bottom:20px;z-index:2}
+.card .cap p{font-size:.9rem;margin-top:.3em}
+
+/* tavern mosaic */
+.mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:12px;margin-top:56px}
+.mosaic figure{overflow:hidden;border-radius:2px}
+.mosaic .w2{grid-column:span 2}.mosaic .h2{grid-row:span 2}
+
+/* quote */
+.quote{position:relative;padding:160px 0;text-align:center;overflow:hidden}
+.quote img{position:absolute;inset:0;filter:brightness(.35)}
+.quote blockquote{position:relative;font-family:var(--serif);font-size:clamp(2rem,4.6vw,3.6rem);line-height:1.15;max-width:20ch;margin:0 auto}
+.quote cite{position:relative;display:block;margin-top:1.2em;font-style:normal}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gallery img{aspect-ratio:1;border-radius:2px}
+@media (max-width:700px){.gallery{grid-template-columns:1fr 1fr}}
+
+/* contact */
+.contact{background:var(--ink2);border-top:1px solid var(--line)}
+.contact .split{align-items:start}
+.info{display:grid;gap:22px;margin-top:2em}
+.info div{border-left:2px solid var(--gold);padding-left:18px}
+.info small{display:block;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+.info a,.info span{font-size:1.25rem;text-decoration:none;font-family:var(--serif)}
+.map{aspect-ratio:4/3;border:1px solid var(--line);filter:grayscale(1) invert(.92) contrast(.9);width:100%}
+footer{padding:36px 0;border-top:1px solid var(--line);font-size:.82rem;color:var(--mute)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 1s ease,transform 1s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.hero>img{animation:none}}
+
+@media (max-width:900px){
+  .links a:not(.call){display:none}
+  section{padding:84px 0}
+  .split{grid-template-columns:1fr;gap:64px}
+  .split.rev .media{order:0}
+  .media .inset{right:-8px;bottom:-30px}.split.rev .media .inset{left:-8px}
+  .cards{grid-template-columns:1fr 1fr}
+  .mosaic{grid-template-columns:1fr 1fr;grid-auto-rows:170px}
+  .strip .wrap{grid-template-columns:1fr 1fr}
+  .strip div:nth-child(3){border-left:0}
+  .strip div:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .cards{grid-template-columns:1fr}
+  .card{aspect-ratio:4/3}
+  .brand span{font-size:1.1rem}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/logo.png" alt="Λογότυπο Mpatsilas Group"><span>MPATSILAS GROUP</span></a>
+    <div class="links">
+      <a href="#farm">Φάρμα</a><a href="#meat">Κρέατα</a><a href="#tavern">Ταβέρνα</a><a href="#aetia">Αετιά</a>
+      <a class="call" href="tel:+306970513616">697 051 3616</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <img src="img/fireplace.jpg" alt="Το τζάκι της ταβέρνας Η Τσιουργιάκα">
+  <div class="wrap">
+    <div class="eyebrow">Αετιά Γρεβενών · από το 1936</div>
+    <h1>Από τη φάρμα <em>στη φωτιά.</em></h1>
+    <p>Δικά μας ζώα, δικό μας κρέας ωρίμανσης, παραδοσιακή ταβέρνα «Η Τσιουργιάκα» και δωμάτια για να μείνετε στα βουνά της Πίνδου.</p>
+    <div class="row">
+      <a class="btn" href="tel:+306970513616">Κράτηση · 697 051 3616</a>
+      <a class="btn ghost" href="#farm">Γνωρίστε μας</a>
+    </div>
+  </div>
+</header>
+
+<div class="strip">
+  <div class="wrap">
+    <div><b>1936</b><small>Οικογενειακή παράδοση</small></div>
+    <div><b>Φάρμα</b><small>Βοοειδή · μαύροι χοίροι · πρόβατα</small></div>
+    <div><b>Dry-aged</b><small>Κρέας ωρίμανσης</small></div>
+    <div><b>Δωμάτια</b><small>Ενοικιαζόμενα</small></div>
+  </div>
+</div>
+
+<section id="farm">
+  <div class="wrap split">
+    <div class="media reveal">
+      <div class="main"><img src="img/cattle.jpg" alt="Στη φάρμα με τα μοσχάρια"></div>
+      <div class="inset"><img src="img/blackpigs.jpg" alt="Μαύροι χοίροι στη βοσκή"></div>
+    </div>
+    <div class="text reveal">
+      <div class="eyebrow">Η φάρμα</div>
+      <h2>Ξέρουμε από πού έρχεται κάθε κομμάτι.</h2>
+      <p>Στην Αετιά μεγαλώνουμε τα δικά μας ζώα: μοσχάρια, μαύρους χοίρους και πρόβατα, ελεύθερα στα βουνά και φροντισμένα από την ίδια οικογένεια εδώ και γενιές.</p>
+      <p>Γι' αυτό το κρέας που φτάνει στο τραπέζι σας έχει τη γεύση του τόπου, και σας λέμε με σιγουριά από πού ήρθε.</p>
+      <ul class="list">
+        <li>Βοοειδή ελεύθερης βοσκής</li>
+        <li>Μαύροι χοίροι των βουνών</li>
+        <li>Αιγοπρόβατα από την περιοχή</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="meat">
+  <div class="wrap">
+    <div class="head reveal">
+      <div><div class="eyebrow">Κρεοπωλείο · Ωρίμανση</div><h2>Κρέας ωρίμανσης,<br>κομμένο στο χέρι.</h2></div>
+      <p>Ωριμάζουμε τα κομμάτια μας σε ειδικούς θαλάμους και τα συσκευάζουμε σε κενό αέρος, έτοιμα για το δικό σας ψήσιμο.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal"><img src="img/dryage.jpg" alt="Θάλαμος ωρίμανσης κρέατος"><div class="cap"><h3>Dry-aged</h3><p>Ωρίμανση σε ελεγχόμενο θάλαμο για βαθιά γεύση και τρυφερότητα.</p></div></div>
+      <div class="card reveal"><img src="img/butcher.jpg" alt="Κοπή tomahawk"><div class="cap"><h3>Tomahawk &amp; T-bone</h3><p>Μεγάλες μπριζόλες με κόκαλο, κομμένες από εμάς.</p></div></div>
+      <div class="card reveal"><img src="img/pack.jpg" alt="Συσκευασμένα κομμάτια σε κενό αέρος"><div class="cap"><h3>Σε κενό αέρος</h3><p>Ribeye, picanha και άλλα κομμάτια, συσκευασμένα με το σήμα μας.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="tavern">
+  <div class="wrap">
+    <div class="split rev">
+      <div class="media reveal">
+        <div class="main"><img src="img/grill.jpg" alt="Μπριζόλες στη σχάρα"></div>
+        <div class="inset"><img src="img/storefront.jpg" alt="Η είσοδος της ταβέρνας Η Τσιουργιάκα στο χιόνι"></div>
+      </div>
+      <div class="text reveal">
+        <div class="eyebrow">Παραδοσιακή ταβέρνα</div>
+        <h2>«Η Τσιουργιάκα»</h2>
+        <p>Τζάκι το χειμώνα, ο μεγάλος πλάτανος το καλοκαίρι. Στην ταβέρνα μας ψήνουμε στα κάρβουνα τα κρέατα της φάρμας μας, σούβλες και μαγειρευτά του βουνού.</p>
+        <p>Κάθε καλοκαίρι η πλατεία γεμίζει με κόσμο, μουσική και γλέντι μέχρι αργά.</p>
+        <ul class="list">
+          <li>Κρέατα ωρίμανσης στα κάρβουνα</li>
+          <li>Σούβλες και παραδοσιακές συνταγές</li>
+          <li>Τραπέζια κάτω από τον πλάτανο</li>
+        </ul>
+        <a class="btn" href="tel:+306970513616">Κλείστε τραπέζι</a>
+      </div>
+    </div>
+    <div class="mosaic">
+      <figure class="w2 h2 reveal"><img src="img/feast.jpg" alt="Γλέντι στην πλατεία το βράδυ"></figure>
+      <figure class="reveal"><img src="img/spit.jpg" alt="Κρέας στη σούβλα"></figure>
+      <figure class="reveal"><img src="img/ribeye2.jpg" alt="Ribeye σε συσκευασία"></figure>
+      <figure class="w2 reveal"><img src="img/night.jpg" alt="Βραδιά στην ταβέρνα κάτω από τα δέντρα"></figure>
+    </div>
+  </div>
+</section>
+
+<div class="quote">
+  <img src="img/village.jpg" alt="Η Αετιά χιονισμένη">
+  <div class="wrap">
+    <blockquote class="reveal">Από το 1936. Το ίδιο βουνό, η ίδια φωτιά.</blockquote>
+    <cite class="eyebrow reveal">Οικογένεια Μπατσίλα · Αετιά</cite>
+  </div>
+</div>
+
+<section id="aetia">
+  <div class="wrap">
+    <div class="head reveal">
+      <div><div class="eyebrow">Ενοικιαζόμενα δωμάτια</div><h2>Μείνετε στην Αετιά.</h2></div>
+      <p>Χιονισμένα δάση το χειμώνα, φαράγγια, λίμνες και άλογα στα λιβάδια την άνοιξη. Τα δωμάτιά μας είναι η αφετηρία σας για τα βουνά των Γρεβενών.</p>
+    </div>
+    <div class="gallery reveal">
+      <img src="img/gorge.jpg" alt="Το φαράγγι από ψηλά">
+      <img src="img/snowhouse.jpg" alt="Το κατάλυμα στο χιόνι">
+      <img src="img/horses.jpg" alt="Άλογα στο χιόνι">
+      <img src="img/lake.jpg" alt="Ορεινή λίμνη">
+      <img src="img/piglet.jpg" alt="Γουρουνάκι της φάρμας">
+      <img src="img/cows.jpg" alt="Αγελάδες στη βοσκή">
+      <img src="img/night2.jpg" alt="Καλοκαιρινή βραδιά">
+      <img src="img/butcher2.jpg" alt="Στο εργαστήριο">
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap split">
+    <div class="reveal">
+      <div class="eyebrow">Επικοινωνία</div>
+      <h2>Ελάτε να μας βρείτε.</h2>
+      <p>Για κρατήσεις στην ταβέρνα, στα δωμάτια ή για παραγγελίες κρέατος, καλέστε μας.</p>
+      <div class="info">
+        <div><small>Τηλέφωνο</small><a href="tel:+306970513616">697 051 3616</a></div>
+        <div><small>Τοποθεσία</small><span>Αετιά, Γρεβενά</span></div>
+      </div>
+      <p style="margin-top:2em"><a class="btn" href="https://maps.google.com/?q=Αετιά+Γρεβενά" target="_blank" rel="noopener">Οδηγίες στο χάρτη</a></p>
+    </div>
+    <iframe class="map reveal" loading="lazy" title="Χάρτης Αετιάς" src="https://www.google.com/maps?q=%CE%91%CE%B5%CF%84%CE%B9%CE%AC%20%CE%93%CF%81%CE%B5%CE%B2%CE%B5%CE%BD%CE%AC&output=embed"></iframe>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="y"></span> Mpatsilas Group · Αετιά Γρεβενών · est. 1936</span>
+    <span>Ταβέρνα «Η Τσιουργιάκα» · Φάρμα · Δωμάτια</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+const nav=document.getElementById('nav');
+const onScroll=()=>nav.classList.toggle('solid',scrollY>40);
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
