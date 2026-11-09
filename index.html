@@ -31,7 +31,7 @@ p{color:#d9d0bf}
 .btn.ghost:hover{background:var(--gold);color:var(--ink)}
 
 /* nav */
-nav{position:fixed;inset:0 0 auto 0;z-index:20;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+nav{position:fixed;inset:0 0 auto 0;z-index:40;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
 nav.solid{background:rgba(13,12,10,.92);backdrop-filter:blur(10px);border-color:var(--line)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
@@ -173,26 +173,118 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .hero>img{will-change:transform}
 .hero .inner{will-change:transform,opacity}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.media .main,.media .inset,.card,.mosaic figure,.gallery img{clip-path:none}.media .main img,.mosaic img{transform:none}}
+/* ===== golden ratio system (φ = 1.618) ===== */
+:root{--phi:1.618;--s-2:.382rem;--s-1:.618rem;--s0:1rem;--s1:1.618rem;--s2:2.618rem;--s3:4.236rem;--s4:6.854rem;--gut:clamp(16px,4vw,40px)}
+body{font-size:1.0625rem;line-height:1.618}
+.wrap{max-width:1240px;padding:0 var(--gut)}
+h2{font-size:clamp(2.2rem,1.4rem + 3.2vw,4.236rem);line-height:1.05;margin:var(--s-1) 0 var(--s1)}
+h3{font-size:clamp(1.4rem,1.2rem + .6vw,1.618rem)}
+p{max-width:62ch}
+section{padding:clamp(var(--s3),9vw,var(--s4)) 0}
+.split{grid-template-columns:1fr 1.618fr;gap:clamp(var(--s2),6vw,var(--s4))}
+.split .media{order:0}.split .text{order:1}
+.split:not(.rev){grid-template-columns:1.618fr 1fr}
+.split.rev{grid-template-columns:1fr 1.618fr}
+.split.rev .media{order:2}
+#vasilitsa .split{grid-template-columns:1fr 1.618fr}
+.media .main{aspect-ratio:1/1.618;max-height:86svh;width:100%}
+.split:not(.rev) .media .main{aspect-ratio:1.618/1.618}
+.media .inset{width:38.2%;aspect-ratio:1/1.618;bottom:calc(var(--s2)*-1);right:calc(var(--s1)*-1)}
+.split.rev .media .inset{left:calc(var(--s1)*-1)}
+.list{margin:var(--s1) 0 var(--s2);gap:var(--s-1)}
+.list li{padding-bottom:var(--s-1)}
+.head{margin-bottom:var(--s2);gap:var(--s1)}
+.cards{gap:var(--s0)}
+.card{aspect-ratio:1/1.618}
+.card .cap{left:var(--s1);right:var(--s1);bottom:var(--s1)}
+.mosaic{margin-top:var(--s3);gap:var(--s-1);grid-auto-rows:clamp(150px,16vw,236px)}
+.gallery{gap:var(--s-1)}
+.strip div{padding:var(--s1) var(--s-1)}
+.strip b{font-size:clamp(1.618rem,1.2rem + 1.4vw,2.618rem)}
+.btn{padding:1em 1.618em;min-height:48px}
+.text .btn{margin-top:var(--s-1)}
+.contact .split{grid-template-columns:1fr 1.618fr}
+.info{gap:var(--s1);margin-top:var(--s1)}
+.map{aspect-ratio:1.618/1}
+
+/* nav: burger + mobile menu */
+.burger{display:none;width:44px;height:44px;border:0;background:none;cursor:pointer;position:relative;z-index:31}
+.burger span{position:absolute;left:11px;right:11px;height:1.5px;background:var(--paper);transition:transform .4s cubic-bezier(.7,0,.2,1),opacity .3s,top .4s}
+.burger span:nth-child(1){top:16px}.burger span:nth-child(2){top:22px}.burger span:nth-child(3){top:28px}
+.menu-open .burger span:nth-child(1){top:22px;transform:rotate(45deg)}
+.menu-open .burger span:nth-child(2){opacity:0}
+.menu-open .burger span:nth-child(3){top:22px;transform:rotate(-45deg)}
+.mmenu{position:fixed;inset:0;z-index:30;background:rgba(13,12,10,.97);backdrop-filter:blur(14px);display:flex;flex-direction:column;justify-content:center;padding:0 var(--gut);gap:var(--s-1);clip-path:circle(0 at calc(100% - 38px) 36px);transition:clip-path .8s cubic-bezier(.7,0,.2,1);visibility:hidden}
+.menu-open .mmenu{clip-path:circle(150% at calc(100% - 38px) 36px);visibility:visible}
+.mmenu a{font-family:var(--serif);font-size:clamp(2rem,9vw,2.618rem);text-decoration:none;line-height:1.3;opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s,color .2s}
+.menu-open .mmenu a{opacity:1;transform:none}
+.mmenu a:hover{color:var(--gold)}
+.mmenu .btn{font-family:var(--sans);font-size:.85rem;margin-top:var(--s1);align-self:flex-start}
+.menu-open{overflow:hidden}
+
+/* mobile sticky call bar */
+.callbar{display:none}
+@media (max-width:900px){
+  .links{display:none}
+  .burger{display:block}
+  nav .wrap{height:64px}
+  .split,.split:not(.rev),.split.rev,#vasilitsa .split,.contact .split{grid-template-columns:1fr}
+  .split.rev .media,.split .media{order:0}
+  .media .main,.split:not(.rev) .media .main{aspect-ratio:1/1.1;max-height:none}
+  .media .inset{width:38.2%;right:-6px;bottom:calc(var(--s1)*-1)}
+  .split.rev .media .inset{left:-6px}
+  .card{aspect-ratio:1/1.3}
+  .callbar{display:flex;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:25;gap:8px;transform:translateY(140%);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+  .callbar.show{transform:none}
+  .callbar a{flex:1;justify-content:center;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;border-radius:0;box-shadow:0 12px 30px -8px rgba(0,0,0,.7)}
+  .callbar .btn.ghost{background:rgba(13,12,10,.85);backdrop-filter:blur(8px);flex:0 0 38.2%}
+  footer{padding-bottom:96px}
+}
+@media (max-width:560px){
+  .cards{grid-template-columns:1fr}
+  .card{aspect-ratio:1.618/1}
+  .mosaic{grid-template-columns:1fr 1fr;grid-auto-rows:140px}
+  .mosaic .w2.h2{grid-column:span 2;grid-row:span 2}
+  .head{flex-direction:column;align-items:flex-start}
+  .hero h1{font-size:clamp(2.8rem,13vw,3.6rem)}
+  .hero .row{flex-direction:column;align-items:stretch;max-width:320px;margin:0 auto}
+  .strip b{font-size:1.5rem}
+  .strip small{font-size:.68rem;letter-spacing:.1em}
+}
+
+@media (max-width:900px),(hover:none){
+  .media .main,.media .inset,.card,.mosaic figure,.gallery img{clip-path:none!important;transition:opacity .5s ease,transform .5s ease;transition-delay:0s!important}
+  .media .main img,.mosaic img{transform:none!important;transition:none}
+  .reveal{transform:translateY(12px);transition:opacity .5s ease,transform .5s ease;transition-delay:0s!important}
+  .in .inset{transition-delay:0s}
+}
 </style>
 </head>
 <body>
 
 <nav id="nav">
   <div class="wrap">
-    <a class="brand" href="#top"><img src="img/logo.png" alt="Λογότυπο Mpatsilas Group"><span>MPATSILAS GROUP</span></a>
+    <a class="brand" href="#top"><img decoding="async" src="img/logo.png" alt="Λογότυπο Mpatsilas Group"><span>MPATSILAS GROUP</span></a>
     <div class="links">
       <a href="#farm">Φάρμα</a><a href="#meat">Κρέατα</a><a href="#pig">Μαύρος χοίρος</a><a href="#tavern">Ταβέρνα</a><a href="#vasilitsa">Βασιλίτσα</a><a href="#aetia">Αετιά</a>
       <a class="call" href="tel:+306970513616">697 051 3616</a>
     </div>
+    <button class="burger" id="burger" aria-label="Μενού" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
+<div class="mmenu" id="mmenu" aria-hidden="true">
+  <a href="#farm">Φάρμα</a><a href="#meat">Κρέατα</a><a href="#pig">Μαύρος χοίρος</a><a href="#tavern">Ταβέρνα</a><a href="#vasilitsa">Βασιλίτσα</a><a href="#aetia">Αετιά</a><a href="#contact">Επικοινωνία</a>
+  <a class="btn" href="tel:+306970513616">Κλήση · 697 051 3616</a>
+</div>
+<div class="callbar" id="callbar"><a class="btn" href="tel:+306970513616">Κράτηση</a><a class="btn ghost" href="#contact">Χάρτης</a></div>
+
 <header class="hero" id="top">
-  <img src="img/fireplace.jpg" alt="Το τζάκι της ταβέρνας Η Τσιουργιάκα">
+  <img fetchpriority="high" src="img/fireplace.jpg" alt="Το τζάκι της ταβέρνας Η Τσιουργιάκα">
   <span class="side l">Αετιά · Γρεβενά</span>
   <span class="side r">Βασιλίτσα · Πίνδος</span>
   <div class="inner">
-    <img class="emblem" src="img/logo.png" alt="Mpatsilas Group">
+    <img decoding="async" class="emblem" src="img/logo.png" alt="Mpatsilas Group">
     <div class="est">Est. 1936</div>
     <h1>Από τη φάρμα<br><em>στη φωτιά.</em></h1>
     <svg class="orn" viewBox="0 0 120 14" fill="none" stroke="#d4a24c" stroke-width="1"><path d="M0 7h48M72 7h48"/><path d="M60 1l6 6-6 6-6-6z"/><circle cx="60" cy="7" r="1.5" fill="#d4a24c"/></svg>
@@ -217,8 +309,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 <section id="farm">
   <div class="wrap split">
     <div class="media reveal">
-      <div class="main"><img src="img/cattle.jpg" alt="Στη φάρμα με τα μοσχάρια"></div>
-      <div class="inset"><img src="img/blackpigs.jpg" alt="Μαύροι χοίροι στη βοσκή"></div>
+      <div class="main"><img decoding="async" src="img/cattle.jpg" alt="Στη φάρμα με τα μοσχάρια"></div>
+      <div class="inset"><img decoding="async" src="img/blackpigs.jpg" alt="Μαύροι χοίροι στη βοσκή"></div>
     </div>
     <div class="text reveal">
       <div class="eyebrow">Η φάρμα</div>
@@ -241,9 +333,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <p>Ωριμάζουμε τα κομμάτια μας σε ειδικούς θαλάμους και τα συσκευάζουμε σε κενό αέρος, έτοιμα για το δικό σας ψήσιμο.</p>
     </div>
     <div class="cards">
-      <div class="card reveal"><img src="img/dryage.jpg" alt="Θάλαμος ωρίμανσης κρέατος"><div class="cap"><h3>Dry-aged</h3><p>Ωρίμανση σε ελεγχόμενο θάλαμο για βαθιά γεύση και τρυφερότητα.</p></div></div>
-      <div class="card reveal"><img src="img/butcher.jpg" alt="Κοπή tomahawk"><div class="cap"><h3>Tomahawk &amp; T-bone</h3><p>Μεγάλες μπριζόλες με κόκαλο, κομμένες από εμάς.</p></div></div>
-      <div class="card reveal"><img src="img/pack.jpg" alt="Συσκευασμένα κομμάτια σε κενό αέρος"><div class="cap"><h3>Σε κενό αέρος</h3><p>Ribeye, picanha και άλλα κομμάτια, συσκευασμένα με το σήμα μας.</p></div></div>
+      <div class="card reveal"><img decoding="async" src="img/dryage.jpg" alt="Θάλαμος ωρίμανσης κρέατος"><div class="cap"><h3>Dry-aged</h3><p>Ωρίμανση σε ελεγχόμενο θάλαμο για βαθιά γεύση και τρυφερότητα.</p></div></div>
+      <div class="card reveal"><img decoding="async" src="img/butcher.jpg" alt="Κοπή tomahawk"><div class="cap"><h3>Tomahawk &amp; T-bone</h3><p>Μεγάλες μπριζόλες με κόκαλο, κομμένες από εμάς.</p></div></div>
+      <div class="card reveal"><img decoding="async" src="img/pack.jpg" alt="Συσκευασμένα κομμάτια σε κενό αέρος"><div class="cap"><h3>Σε κενό αέρος</h3><p>Ribeye, picanha και άλλα κομμάτια, συσκευασμένα με το σήμα μας.</p></div></div>
     </div>
   </div>
 </section>
@@ -251,8 +343,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 <section id="pig">
   <div class="wrap split">
     <div class="media reveal">
-      <div class="main"><img src="img/piglet.jpg" alt="Μαύρο χοιρινό της φάρμας μας"></div>
-      <div class="inset"><img src="img/pigsherd.jpg" alt="Οι μαύροι χοίροι στη φάρμα μας"></div>
+      <div class="main"><img decoding="async" src="img/piglet.jpg" alt="Μαύρο χοιρινό της φάρμας μας"></div>
+      <div class="inset"><img decoding="async" src="img/pigsherd.jpg" alt="Οι μαύροι χοίροι στη φάρμα μας"></div>
     </div>
     <div class="text reveal">
       <div class="eyebrow">Ο μαύρος χοίρος μας</div>
@@ -274,8 +366,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   <div class="wrap">
     <div class="split rev">
       <div class="media reveal">
-        <div class="main"><img src="img/grill.jpg" alt="Μπριζόλες στη σχάρα"></div>
-        <div class="inset"><img src="img/storefront.jpg" alt="Η είσοδος της ταβέρνας Η Τσιουργιάκα στο χιόνι"></div>
+        <div class="main"><img decoding="async" src="img/grill.jpg" alt="Μπριζόλες στη σχάρα"></div>
+        <div class="inset"><img decoding="async" src="img/storefront.jpg" alt="Η είσοδος της ταβέρνας Η Τσιουργιάκα στο χιόνι"></div>
       </div>
       <div class="text reveal">
         <div class="eyebrow">Παραδοσιακή ταβέρνα</div>
@@ -291,16 +383,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       </div>
     </div>
     <div class="mosaic">
-      <figure class="w2 h2 reveal"><img src="img/feast.jpg" alt="Γλέντι στην πλατεία το βράδυ"></figure>
-      <figure class="reveal"><img src="img/spit.jpg" alt="Κρέας στη σούβλα"></figure>
-      <figure class="reveal"><img src="img/ribeye2.jpg" alt="Ribeye σε συσκευασία"></figure>
-      <figure class="w2 reveal"><img src="img/night.jpg" alt="Βραδιά στην ταβέρνα κάτω από τα δέντρα"></figure>
+      <figure class="w2 h2 reveal"><img decoding="async" src="img/feast.jpg" alt="Γλέντι στην πλατεία το βράδυ"></figure>
+      <figure class="reveal"><img decoding="async" src="img/spit.jpg" alt="Κρέας στη σούβλα"></figure>
+      <figure class="reveal"><img decoding="async" src="img/ribeye2.jpg" alt="Ribeye σε συσκευασία"></figure>
+      <figure class="w2 reveal"><img decoding="async" src="img/night.jpg" alt="Βραδιά στην ταβέρνα κάτω από τα δέντρα"></figure>
     </div>
   </div>
 </section>
 
 <div class="quote">
-  <img src="img/village.jpg" alt="Η Αετιά χιονισμένη">
+  <img decoding="async" src="img/village.jpg" alt="Η Αετιά χιονισμένη">
   <div class="wrap">
     <blockquote class="reveal">Από το 1936. Το ίδιο βουνό, η ίδια φωτιά.</blockquote>
     <cite class="eyebrow reveal">Οικογένεια Μπατσίλα · Αετιά</cite>
@@ -321,8 +413,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       </ul>
     </div>
     <div class="media reveal">
-      <div class="main"><img src="img/skilift.jpg" alt="Αναβατήρας στη Βασιλίτσα στο χιόνι"></div>
-      <div class="inset"><img src="img/snowpeak.jpg" alt="Χιονισμένα βουνά της Βασιλίτσας"></div>
+      <div class="main"><img decoding="async" src="img/skilift.jpg" alt="Αναβατήρας στη Βασιλίτσα στο χιόνι"></div>
+      <div class="inset"><img decoding="async" src="img/snowpeak.jpg" alt="Χιονισμένα βουνά της Βασιλίτσας"></div>
     </div>
   </div>
 </section>
@@ -334,14 +426,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <p>Χιονισμένα δάση το χειμώνα, φαράγγια, λίμνες και άλογα στα λιβάδια την άνοιξη. Τα δωμάτιά μας είναι η αφετηρία σας για τα βουνά των Γρεβενών.</p>
     </div>
     <div class="gallery reveal">
-      <img src="img/gorge.jpg" alt="Το φαράγγι από ψηλά">
-      <img src="img/snowhouse.jpg" alt="Το κατάλυμα στο χιόνι">
-      <img src="img/horses.jpg" alt="Άλογα στο χιόνι">
-      <img src="img/lake.jpg" alt="Ορεινή λίμνη">
-      <img src="img/piglet.jpg" alt="Γουρουνάκι της φάρμας">
-      <img src="img/cows.jpg" alt="Αγελάδες στη βοσκή">
-      <img src="img/night2.jpg" alt="Καλοκαιρινή βραδιά">
-      <img src="img/butcher2.jpg" alt="Στο εργαστήριο">
+      <img decoding="async" src="img/gorge.jpg" alt="Το φαράγγι από ψηλά">
+      <img decoding="async" src="img/snowhouse.jpg" alt="Το κατάλυμα στο χιόνι">
+      <img decoding="async" src="img/horses.jpg" alt="Άλογα στο χιόνι">
+      <img decoding="async" src="img/lake.jpg" alt="Ορεινή λίμνη">
+      <img decoding="async" src="img/piglet.jpg" alt="Γουρουνάκι της φάρμας">
+      <img decoding="async" src="img/cows.jpg" alt="Αγελάδες στη βοσκή">
+      <img decoding="async" src="img/night2.jpg" alt="Καλοκαιρινή βραδιά">
+      <img decoding="async" src="img/butcher2.jpg" alt="Στο εργαστήριο">
     </div>
   </div>
 </section>
@@ -374,7 +466,7 @@ document.getElementById('y').textContent=new Date().getFullYear();
 const nav=document.getElementById('nav');
 const onScroll=()=>nav.classList.toggle('solid',scrollY>40);
 addEventListener('scroll',onScroll,{passive:true});onScroll();
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:0,rootMargin:'0px 0px -8% 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
 // stagger
@@ -389,6 +481,16 @@ if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
     t=false})},{passive:true});
   hImg.addEventListener('animationend',()=>hImg.style.animation='none');
 }
+// mobile menu
+const bur=document.getElementById('burger'),mm=document.getElementById('mmenu');
+const setMenu=o=>{document.documentElement.classList.toggle('menu-open',o);bur.setAttribute('aria-expanded',o);mm.setAttribute('aria-hidden',!o);
+  mm.querySelectorAll('a').forEach((a,i)=>a.style.transitionDelay=o?(.25+i*.05)+'s':'0s')};
+bur.addEventListener('click',()=>setMenu(!document.documentElement.classList.contains('menu-open')));
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
+// call bar
+const cb=document.getElementById('callbar');
+addEventListener('scroll',()=>cb.classList.toggle('show',scrollY>innerHeight*.618),{passive:true});
 </script>
 </body>
 </html>
